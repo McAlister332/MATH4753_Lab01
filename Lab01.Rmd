@@ -134,9 +134,19 @@ BoxL = boxplot(ddt$LENGTH, main = "Fish Length")
 
 # Task 7
 
+Coplot of length vs weight for each river
 
+```{r}
+LWRcoplot = coplot(LENGTH~WEIGHT|RIVER, data = ddt)
+```
 
+Coplot of DDT vs weight for each species
 
+```{r}
+LWRcoplot = coplot(DDT~WEIGHT|SPECIES, data = ddt)
+```
+
+# Task 8
 
 
 
