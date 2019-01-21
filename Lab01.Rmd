@@ -1,0 +1,92 @@
+---
+title: "Lab01"
+author: "Elijah Boulton"
+date: "January 20, 2019"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Task 1
+
+The working directory
+
+```{r}
+getwd()
+```
+
+# Task 2
+
+First 6 lines of data
+
+```{r}
+ddt = read.csv("DDT.csv")
+head(ddt)
+```
+
+# Task 3
+
+Qualitative variables are listed as true, quantitative are listed as false:
+
+```{r}
+unlist(lapply(ddt, is.factor))
+```
+
+Species in the data set:
+
+```{r}
+levels(ddt$SPECIES)
+```
+
+Data for LMBASS with a weight greater than 800 grams
+
+```{r}
+temp = with(ddt, ddt[WEIGHT>800 & SPECIES == "LMBASS",])
+print(temp)
+```
+
+Data for fish from the SCM river with DDT greater than 4.0
+
+```{r}
+temp = with(ddt, ddt[RIVER == "SCM" & DDT > 4.0,])
+print(temp)
+```
+
+Clicker Questions:
+
+Q.1   The mean length of fish in ddt is 42.81
+
+Q.2   The standard deviation of fish weight in ddt is 376.5461
+
+Q.3   The answer is 0
+
+Q.4   The last value of v/20 is 1.00
+
+
+# Task 4
+
+Table of the rivers
+
+```{r}
+tabRVR = table(ddt$RIVER)
+print(tabRVR)
+```
+
+Colored barplot of the rivers
+
+```{r}
+barRVR = barplot(tabRVR, beside = TRUE, col = 1:4, legend.text = TRUE, main = "Number of Fish per River")
+```
+
+
+
+
+
+
+
+

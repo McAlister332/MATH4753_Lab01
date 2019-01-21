@@ -1,0 +1,22 @@
+---
+title: "exampleRMARKDOWN"
+author: "me"
+date: "January 16, 2019"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Task 1
+
+The working directory
+
+```{r}
+getwd()
+```
+
