@@ -83,9 +83,18 @@ Colored barplot of the rivers
 barRVR = barplot(tabRVR, beside = TRUE, col = 1:4, legend.text = TRUE, main = "Number of Fish per River")
 ```
 
+Table of rivers crossed with species of fish
 
+```{r}
+tabRF = with(ddt, table(SPECIES, RIVER))
+print(tabRF)
+```
 
+Barplot of river crossed with species of fish
 
+```{r}
+barRF = barplot(tabRF, main = "Species of Fish in Each River", legend.text = TRUE, width = 3, xlim = c(0, 20))
+```
 
 
 
