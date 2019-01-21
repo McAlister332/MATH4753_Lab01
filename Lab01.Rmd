@@ -96,6 +96,52 @@ Barplot of river crossed with species of fish
 barRF = barplot(tabRF, main = "Species of Fish in Each River", legend.text = TRUE, width = 3, xlim = c(0, 20))
 ```
 
+# Task 5
+
+Pie chart of fish species
+
+```{r}
+tabS = with(ddt, table(SPECIES))
+pie(tabS, main = "Fish of Each Species")
+```
+
+Pie chart of rivers
+
+```{r}
+tabR = with(ddt, table(RIVER))
+pie(tabR, main = "Fish in Each River")
+```
+
+# Task 6
+
+Boxplot of DDT levels
+
+```{r}
+BoxDDT = boxplot(ddt$DDT, main = "DDT Levels in Fish")
+```
+
+Boxplot of fish weight
+
+```{r}
+BoxW = boxplot(ddt$WEIGHT, main = "Fish Weight")
+```
+
+Boxplot of fish length
+
+```{r}
+BoxL = boxplot(ddt$LENGTH, main = "Fish Length")
+```
+
+# Task 7
+
+
+
+
+
+
+
+
+
 
 
 
