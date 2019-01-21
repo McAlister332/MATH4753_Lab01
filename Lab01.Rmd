@@ -80,6 +80,7 @@ print(tabRVR)
 Colored barplot of the rivers
 
 ```{r}
+library(ggplot2)
 barRVR = barplot(tabRVR, beside = TRUE, col = 1:4, legend.text = TRUE, main = "Number of Fish per River")
 ```
 
@@ -148,10 +149,35 @@ LWRcoplot = coplot(DDT~WEIGHT|SPECIES, data = ddt)
 
 # Task 8
 
+Boxplot using ggplot
 
+```{r}
 
+gBox = ggplot(ddt, aes(x = SPECIES, y = WEIGHT)) +
+  geom_boxplot(aes(fill = RIVER)) + ggtitle("Elijah Boulton")
 
+print(gBox)
 
+```
 
+Violin plot using ggplot
 
+```{r}
 
+gViolin = ggplot(ddt, aes(x = RIVER, y = LENGTH)) + 
+  geom_violin(aes(fill = SPECIES)) + ggtitle("Elijah Boulton")
+
+print(gViolin)
+
+```
+
+Scatter plot using ggplot
+
+```{r}
+
+gScatter = ggplot(ddt, aes(x = WEIGHT, y = LENGTH )) + 
+  geom_point(aes( col = SPECIES)) + ggtitle("Elijah Boulton")
+
+print(gScatter)
+
+```
